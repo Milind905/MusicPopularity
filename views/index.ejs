@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="musicPopularity" ng-strict-di>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Music Popularity</title>
   </head>
+
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+  	<!-- ToDO: Add nav before ui-view-->
+    <div ui-view></div>
+ 
+    <!-- Core Components -->
+    <script src="/bower_components/angular/angular.js"></script>
+  	<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  	<script src="/bower_components/jquery/dist/jquery.js"></script>
+  	<script src="/scripts/angularApp.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/styles/style.css">
+
+
+   	<!-- Routing Modules -->
+   	<script src="/scripts/router.js"></script>
+
+   	<!-- Controllers -->
+   	<script src="/scripts/controllers/indexController.js"></script>
+		<script src="/scripts/controllers/tempController.js"></script>
+
+		<!-- Directives -->
+
+		<!-- Filters -->
+
+		<!-- Services -->
+
+	</body>
 </html>
+
