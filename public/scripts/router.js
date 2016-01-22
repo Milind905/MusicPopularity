@@ -5,9 +5,9 @@ function ($stateProvider, $urlRouterProvider) {
 	'use strict'
 
 	$stateProvider
-		.state('index', {
+		.state('home', {
 			url: '/',
-			templateUrl: '/views/index.html',
+			templateUrl: '/views/home.html',
 			controller: 'IndexCtrl',
 			controllerAs: 'index',
 		})
