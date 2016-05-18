@@ -1,6 +1,9 @@
 angular.module('musicPopularity')
-.controller('TempCtrl', function(){
+.controller('TempCtrl', ['spotify', function(spotify){
 	var self = this;
 
-	this.test = 'Hello Temp!';
-});
+	self.test = 'Hello Temp!';
+	self.login = function() {
+		spotify.requestAuth();
+	}
+}]);

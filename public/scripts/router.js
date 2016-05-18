@@ -18,6 +18,13 @@ function ($stateProvider, $urlRouterProvider) {
 			controller: 'TempCtrl',
 			controllerAs: 'temp'
 		})
+
+		.state('loggedin', {
+			url: '/loggedin?access_token&refresh_token',
+			templateUrl: '/views/loggedin.html',
+			controller: 'LogCtrl',
+			controllerAs: 'logged'
+		})
 		
 	$urlRouterProvider.otherwise('/');
 }]);

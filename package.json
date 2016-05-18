@@ -1,16 +1,26 @@
 {
-  "name": "music-popularity",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
+  "name": "MusicPopularity",
+  "version": "1.0.0",
+  "description": "An app to display the popularity of a song, artist, or album.",
+  "main": "app.js",
   "dependencies": {
-    "body-parser": "~1.13.2",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-    "express": "~4.13.1",
-    "mongoose": "^4.1.12",
-    "morgan": "~1.6.1"
-  }
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "path": "^0.12.7",
+    "q": "^1.4.1",
+    "querystring": "^0.2.0",
+    "request": "^2.72.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Milind905/MusicPopularity.git"
+  },
+  "author": "Milind Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Milind905/MusicPopularity/issues"
+  },
+  "homepage": "https://github.com/Milind905/MusicPopularity"
 }
