@@ -7,8 +7,8 @@
 2) git remote add origin \<your forked repo\><br>
 3) git remote add masterRepo https://github.com/Milind905/MusicPopularity.git<br>
 4) npm install, bower install<br>
-5) npm start<br>
-6) Go to localhost:3000 on a browser<br>
+5) node app.js<br>
+6) Go to localhost:8000 on a browser<br>
 
 
 
