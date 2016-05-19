@@ -10,6 +10,7 @@ angular.module('musicPopularity')
 		self.access_token = $stateParams.access_token;
 		self.refresh_token = $stateParams.refresh_token;
 		
+		//potentially move into spotify services
 		var req = {
 		 	method: 'GET',
 		 	url: 'https://api.spotify.com/v1/me',

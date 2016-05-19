@@ -26,7 +26,8 @@ router.get('/authorize', function(req, res) {
       client_id: client_id,   
       scope: scope,       
       redirect_uri: redirect_uri,
-      state: state
+      state: state,
+      show_dialog: true
 	}));
 });
 

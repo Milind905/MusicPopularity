@@ -8,15 +8,15 @@ function ($stateProvider, $urlRouterProvider) {
 		.state('home', {
 			url: '/',
 			templateUrl: '/views/home.html',
-			controller: 'IndexCtrl',
-			controllerAs: 'index',
+			controller: 'HomeCtrl',
+			controllerAs: 'home',
 		})
 
-		.state('temp', {
-			url : '/temp',
-			templateUrl: '/views/temp.html',
-			controller: 'TempCtrl',
-			controllerAs: 'temp'
+		.state('error', {
+			url : '/error?apierror',
+			templateUrl: '/views/error.html',
+			controller: 'ErrorCtrl',
+			controllerAs: 'error'
 		})
 
 		.state('loggedin', {
