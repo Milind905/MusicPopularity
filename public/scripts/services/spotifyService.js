@@ -41,6 +41,17 @@ angular.module('musicPopularity')
 		return $http(req);
 	}
 
+	self.getMultAlbumInfo = function(albumIds){
+		var req = {
+			method: 'GET',
+			url: 'https://api.spotify.com/v1/albums?ids='+albumIds,
+			headers: {
+				'Authorization': 'Bearer ' + self.access_token
+			}
+		}
+		return $http(req);
+	}
+
 	//ToDo: Should probably figure out how to make this work
 	self.requestAuth = function(){
 		$http.get('/api/authorize');
