@@ -13,5 +13,58 @@
   		<div class="col-xs-3">Email</div>
   		<div class="col-xs-3">{{logged.userInfo.email}}</div>
   	</div>
+
+    <div class="row">
+      <h3>Search:</h3>
+      <input type="text" ng-model="logged.searchBox">
+      <button class="btn btn-info" ng-click="logged.search()">Enter</button>
+    </div>
+
+    <div class="row">
+      <h3>Results:</h3>
+    </div>
+
+    <div>
+      <div class="row">
+        <div class="col-xs-3"><b>Album Name</b></div>
+        <div class="col-xs-3"><b>Url</b></div>
+
+      </div>
+      <div class="row" ng-repeat="album in logged.searchResults.albums.items">
+        <div class="col-xs-3">{{album.name}}</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="row">
+        <div class="col-xs-3"><b>Artist Name</b></div>
+        <div class="col-xs-3"><b>Genres</b></div>
+        <div class="col-xs-3"><b>Popularity</b></div>
+      </div>
+      <div class="row" ng-repeat="artist in logged.searchResults.artists.items">
+        <div class="col-xs-3">{{artist.name}}</div>
+        <div class="col-xs-3">{{artist.genres}}</div>
+        <div class="col-xs-3">{{artist.popularity}}</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="row">
+        <div class="col-xs-3"><b>Track Name</b></div>
+        <div class="col-xs-3"><b>Album</b></div>
+        <div class="col-xs-3"><b>Artists</b></div>
+        <div class="col-xs-3"><b>Popularity</b></div>
+      </div>
+      <div class="row" ng-repeat="track in logged.searchResults.tracks.items">
+        <div class="col-xs-3">{{track.name}}</div>
+        <div class="col-xs-3">{{track.album.name}}</div>
+        <div class="col-xs-3">{{track.artists[0].name}}</div>
+        <div class="col-xs-3">{{track.popularity}}</div>
+      </div>
+    </div>
+
   </div>
+
+  
+
 </div>

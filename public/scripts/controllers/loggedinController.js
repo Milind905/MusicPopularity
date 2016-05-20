@@ -1,30 +1,30 @@
 angular.module('musicPopularity')
-.controller('LogCtrl', ['$stateParams', '$http', '$q', 'spotify', function($stateParams, $http, $q, spotify){
+.controller('LogCtrl', ['$stateParams', '$q', 'spotify', function($stateParams, $q, spotify){
 	var self = this;
 
-	self.access_token = null;
-	self.refresh_token = null;
 	self.userInfo = null;
+	self.searchBox = null;
+	self.searchResults = null;
 
 	self.obtainTokens = function() {
-		self.access_token = $stateParams.access_token;
-		self.refresh_token = $stateParams.refresh_token;
-		
-		//potentially move into spotify services
-		var req = {
-		 	method: 'GET',
-		 	url: 'https://api.spotify.com/v1/me',
-		 	headers: {
-              'Authorization': 'Bearer ' + self.access_token
-            }
-		}
+		return spotify.storeTokens($stateParams.access_token, $stateParams.refresh_token);
+	};
 
-		$http(req).then(function(res){
-			self.userInfo = res.data;
+	self.search = function() {
+		spotify.search(self.searchBox).then(function(res){
+			console.log(res);
+			self.searchResults = res.data;
 		}, function(err){
 			//do something
 		});
-	};
+	}
 
-    self.obtainTokens();
+    self.obtainTokens().then(function(){
+		return spotify.getMyInfo();
+	}).then(function(res){
+		self.userInfo = res.data;
+	}, function(err){
+		//do something
+	});
+
 }]);
