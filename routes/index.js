@@ -27,7 +27,7 @@ router.get('/authorize', function(req, res) {
       scope: scope,       
       redirect_uri: redirect_uri,
       state: state,
-      show_dialog: true
+      show_dialog: false
 	}));
 });
 
@@ -115,36 +115,5 @@ function generateRandomString(length) {
 };
 
 module.exports = router;
-
-    /*request.post(authOptions, function(error, response, body){
-      if(error || response.statusCode !== 200){
-      	//do something
-      	console.log("Got an error");
-      } else {
-        console.log("Got some shit");
-        var access_token = body.access_token;
-        var refresh_token = body.refresh_token;
-        var expires_in = body.expires_in;
-        var token_type = body.token_type;
-
-        var options = {
-	        url: 'https://api.spotify.com/v1/me',
-	        headers: { 'Authorization': 'Bearer ' + access_token },
-	        json: true
-	      };
-
-        var options2 = {
-          url: 'https://api.spotify.com/v1/search?q=lights&type=track',
-          headers: { 'Authorization': 'Bearer ' + access_token },
-            json: true
-        };
-
-        request.get(options2, function(error, response, body){
-          console.log(body);
-        });
-      }
-  	});
-  }
-});*/
 
 
